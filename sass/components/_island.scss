@@ -1,0 +1,96 @@
+/*------------------------------------*\
+    $ISLAND
+\*------------------------------------*/
+/**
+ * A variant to give an .island an inset effect.
+ * E.g.:
+ * 
+   <div class=island  island--well>
+       I am boxed off.
+   </div>
+ * 
+ * Demo: 
+ * 
+ */
+ .island--well {
+
+
+
+
+
+background-color: #f5f5f5;
+border: 1px solid #e3e3e3;
+@include border-radius(4px);
+@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+
+
+}
+
+
+
+
+
+.container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.nav--site {
+float:left;
+margin-bottom: 0;
+}
+.nav--site a{
+
+color: #999999;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+
+}
+
+.nav--site li:first-child a{
+    border-left:none;
+}
+
+.nav--site .active a,
+.nav--site a:hover{
+color: #fff;
+text-decoration: none;
+}
+.nav--site .active {
+
+
+background-color: #111111;
+-webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+-moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+
+}
+
+
+.header {
+
+background-color: #1b1b1b;
+background-image: -moz-linear-gradient(top, #222222, #111111);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+background-image: -webkit-linear-gradient(top, #222222, #111111);
+background-image: -o-linear-gradient(top, #222222, #111111);
+background-image: linear-gradient(to bottom, #222222, #111111);
+background-repeat: repeat-x;
+border-color: #252525;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+@extend .cf;
+margin-bottom: 20px;
+}
+
+.brand {
+
+float: left;
+
+
+color: #777777;
+
+}
+
+.pull-right {
+
+	float: right;
+}
