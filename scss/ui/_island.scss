@@ -1,0 +1,36 @@
+// Drop shadows
+@mixin box-shadow($shadow...) { 
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+
+
+
+
+
+
+
+
+ .island--well {
+	@include border-radius(4px);
+	@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+	background-color: #f5f5f5;
+	border: 1px solid #e3e3e3;
+}
+
+
+.island-window {
+	@extend .island--well;
+	margin-bottom: $base-spacing-unit;
+}
+
+.island-window__header {
+	padding: $half-spacing-unit $base-spacing-unit;
+	background-color: #e3e3e3;
+}
+
+.island-window__body {
+	padding: $base-spacing-unit;
+}
