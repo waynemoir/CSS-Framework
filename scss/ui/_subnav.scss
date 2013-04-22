@@ -1,0 +1,103 @@
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+// Border Radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Single Corner Border Radius
+@mixin border-top-left-radius($radius) {
+  -webkit-border-top-left-radius: $radius;
+      -moz-border-radius-topleft: $radius;
+          border-top-left-radius: $radius;
+}
+@mixin border-top-right-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+      -moz-border-radius-topright: $radius;
+          border-top-right-radius: $radius;
+}
+@mixin border-bottom-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+      -moz-border-radius-bottomright: $radius;
+          border-bottom-right-radius: $radius;
+}
+@mixin border-bottom-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+      -moz-border-radius-bottomleft: $radius;
+          border-bottom-left-radius: $radius;
+}
+
+// Single Side Border Radius
+@mixin border-top-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-top-left-radius($radius);
+}
+@mixin border-right-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-bottom-right-radius($radius);
+}
+@mixin border-bottom-radius($radius) {
+  @include border-bottom-right-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
+@mixin border-left-radius($radius) {
+  @include border-top-left-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
+
+
+
+
+$brand-link-color: $brand-color;
+$brand-alt-color: darken($brand-color, 10%);
+
+
+
+
+.subnav {
+	@extend .block-list;
+	@extend .nav;
+	@extend .nav--stacked;
+
+
+	@include border-radius($brand-round);
+	
+	border-left: 1px solid #ccc;;
+	border-right: 1px solid #ccc;
+}
+
+.subnav > li:first-child,
+.subnav > li:first-child a {
+	@include border-top-radius($brand-round - 1); // -1 corrects the border radii to account for it being nested
+}
+
+.subnav > li:last-child, 
+.subnav > li:last-child a {
+	@include border-bottom-radius($brand-round - 1); // -1 corrects the border radii to account for it being nested
+}
+
+.subnav a:hover {
+	background-color: $brand-color;
+	color: #fff;
+}
+
+
+.subnav .current a {
+	color: #fff;
+	background-color: $brand-alt-color;
+
+	&:hover {
+		cursor: default;
+
+	}
+}
+
+
+
+
+.subnav__link{
+	@extend .block-list__link;
+}
