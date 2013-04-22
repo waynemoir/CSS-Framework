@@ -23,16 +23,16 @@
  * and introducing objects and abstractions is as simple as switching the
  * following variables to `true`.
  */
-$use-grids:         false;
+$use-grids:         true;
 $use-flexbox:       false;
 $use-columns:       false;
-$use-nav:           false;
+$use-nav:           true;
 $use-options:       false;
 $use-pagination:    false;
-$use-breadcrumb:    false;
+$use-breadcrumb:    true;
 $use-media:         false;
 $use-marginalia:    false;
-$use-island:        false;
+$use-island:        true;
 $use-block-list:    false;
 $use-matrix:        false;
 $use-split:         false;
@@ -69,3 +69,45 @@ $use-greybox:       false;
 /**
  * Place any of your own variables that sit on top of inuit.css here.
  */
+
+ /**
+ * Base body background color.
+ */
+$body-background: #fff;
+
+
+ /**
+ * Base font color.
+ */
+$base-font-color:  #555;
+
+
+/**
+ * Default colour for objects’ backgrounds etc.
+ */
+$base-ui-color-alt: #eee;
+
+
+/**
+ * Alert colours
+ */
+$brand-info-background-color: #d9edf7;
+$brand-info-color: #3a87ad;
+$brand-info-border-color: darken(adjust-hue($brand-info-background-color, -10), 7%);
+
+$brand-success-color:				#468847;
+$brand-success-background-color:	#dff0d8;
+$brand-success-border-color:		darken(adjust-hue($brand-success-background-color, -10), 5%);
+
+$brand-warning-color:				#c09853;
+$brand-warning-background-color:	#fcf8e3;
+$brand-warning-border-color:		darken(adjust-hue($brand-warning-background-color, -10), 3%);
+
+$brand-danger-color:				#b94a48;
+$brand-danger-background-color:		#f2dede;
+$brand-danger-border-color:			darken(adjust-hue($brand-danger-background-color, -10), 3%);
+
+/**
+ * Muted colour
+ */
+$muted-color: #aaa29d; 

@@ -10,9 +10,42 @@
 </head>
 <body>
 
-	<h2>Links</h2>
-	<a href="#">Vanilla link</a>
+	<style>
+		body {
+			padding: 0 20px;
+		}
+	</style>
 
+	<h2>Breadcrumbs</h2>
+	<ol class="nav  breadcrumb">
+		<li><a href="#" class="breadcrumb__link">Home</a></li>
+		<li><a href="#" class="breadcrumb__link">About</a></li>
+		<li><a href="#" class="breadcrumb__link">The Board</a></li>
+		<li class="current">Directors</li>
+	</ol>
+
+	<h2>Tabs</h2>
+	<ul class="nav nav--tabs">
+		<li class="active"><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Portfolio</a></li>
+		<li><a href="#">Contact</a></li>
+	</ul>
+
+	<h2>Islands</h2>
+	<div class="islet  island--well">
+		I am in an .islet .island--well.
+	</div>
+
+	<div class="island  island--well">
+		I am in an .island .island--well.
+	</div>
+
+	<div class="island--window">
+		<div class="island--window__header">Static island--window</div>
+		<div class="island--window__body">I am boxed off.</div>
+	</div>
+	
 	<h2>Icons</h2>
 	<i class="icon-align-left"></i>
 	<i class="icon-align-center"></i>
@@ -22,5 +55,29 @@
 	<i class="icon-italic"></i>
 	<i class="icon-underline"></i>
 
+
+	<h2>Alerts</h2>
+	<div class="alert  alert--info">
+		I am an alert--info alert--islet
+	</div>
+
+	<div class="alert  alert--success">
+		I am an alert--success
+	</div>
+
+	<div class="alert  alert--warning">
+		I am an alert--warning
+	</div>
+
+	<div class="alert  alert--danger">
+		I am an alert--danger
+	</div>
+
+	<div class="alert  alert--info  alert--block">
+		I am an alert--info alert--block
+	</div>
+
+	<h2>Links</h2>
+	<a href="#">Vanilla link</a>
 </body>
 </html>
