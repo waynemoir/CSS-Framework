@@ -29,7 +29,7 @@ $use-columns:       false;
 $use-nav:           true;
 $use-options:       false;
 $use-pagination:    false;
-$use-breadcrumb:    false;
+$use-breadcrumb:    true;
 $use-media:         false;
 $use-marginalia:    false;
 $use-island:        true;
@@ -106,3 +106,8 @@ $brand-warning-border-color:		darken(adjust-hue($brand-warning-background-color,
 $brand-danger-color:				#b94a48;
 $brand-danger-background-color:		#f2dede;
 $brand-danger-border-color:			darken(adjust-hue($brand-danger-background-color, -10), 3%);
+
+/**
+ * Muted colour
+ */
+$muted-color: #aaa29d; 
