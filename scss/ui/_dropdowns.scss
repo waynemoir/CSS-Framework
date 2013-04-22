@@ -1,0 +1,183 @@
+//
+// TODO: TEMP 
+
+$brand-link-color: blue;
+// Drop shadows
+@mixin box-shadow($shadow...) { 
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+// TODO: Optimise
+@mixin button-gradient($basecolour){
+	$highlight: lighten($basecolour, 3%);
+	$lowlight: darken($basecolour, 3%);
+	background-color: $basecolour; /* Old browsers */
+	background-image: -moz-linear-gradient(top, $highlight 0%, $highlight 50%, $lowlight 50%, $lowlight 100%); // FF3.6+
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$highlight), color-stop(50%,$highlight), color-stop(50%,$lowlight), color-stop(100%,$lowlight)); // Chrome,Safari4+
+	background-image: -webkit-linear-gradient(top, $highlight 0%,$highlight 50%,$lowlight 50%,$lowlight 100%); // Chrome10+,Safari5.1+
+	background-image: -o-linear-gradient(top, $highlight 0%,$highlight 50%,$lowlight 50%,$lowlight 100%); // Opera 11.10+
+	background-image: linear-gradient(top, $highlight 0%,$highlight 50%,$lowlight 50%,$lowlight 100%); // W3C
+}
+
+// Gradients
+ @mixin gradient-vertical($start-color, $end-color) {
+	background-color: mix($start-color, $end-color, 60%);
+	background-image: -moz-linear-gradient(top, $start-color, $end-color); // FF 3.6+
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from($start-color), to($end-color)); // Safari 4+, Chrome 2+
+	background-image: -webkit-linear-gradient(top, $start-color, $end-color); // Safari 5.1+, Chrome 10+
+	background-image: -o-linear-gradient(top, $start-color, $end-color); // Opera 11.10
+	background-image: linear-gradient(to bottom, $start-color, $end-color); // Standard, IE10
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+  }
+
+// Dropdown menus
+// --------------------------------------------------
+
+
+$black:                 #000 !default;
+$grayDark:              #333 !default;
+$grayLight:             #999 !default;
+$white:                 #fff !default;
+$zindexDropdown:          1000 !default;
+
+// Dropdowns
+// -------------------------
+$dropdownBackground:            $white !default;
+$dropdownBorder:                rgba(0,0,0,.2) !default;
+$dropdownDividerTop:            #e5e5e5 !default;
+$dropdownDividerBottom:         $white !default;
+
+$dropdownLinkColor:             $grayDark !default;
+$dropdownLinkColorHover:        $white !default;
+$dropdownLinkColorActive:       $white !default;
+
+$dropdownLinkBackgroundActive:  $brand-link-color !default;
+$dropdownLinkBackgroundHover:   $dropdownLinkBackgroundActive !default;
+
+
+
+
+
+
+$base-spacing-unit:        20px !default;
+
+
+
+
+.dropup,
+.dropdown {
+  position: relative;
+}
+.dropdown-toggle:active,
+.open .dropdown-toggle {
+  outline: 0;
+}
+
+
+// The dropdown menu (ul)
+// ----------------------
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: $zindexDropdown;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0; // override default ul
+  list-style: none;
+  background-color: $dropdownBackground;
+  border: 1px solid #ccc; // Fallback for IE7-8
+  border: 1px solid $dropdownBorder;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  @include border-radius(6px);
+  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+
+  // Aligns the dropdown menu to right
+  &.pull-right {
+    right: 0;
+    left: auto;
+  }
+
+  // Dividers (basically an hr) within the dropdown
+  .divider {
+  height: 1px;
+  margin: (($base-spacing-unit / 2) - 1) 1px; // 8px 1px
+  overflow: hidden;
+
+  border-bottom: 1px solid #e5e5e5;
+  }
+
+  // Links within the dropdown menu
+  li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: $base-spacing-unit;
+    color: $dropdownLinkColor;
+    white-space: nowrap;
+  }
+}
+
+// Hover state
+// -----------
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a {
+  text-decoration: none;
+  color: $dropdownLinkColorHover;
+  @include gradient-vertical($dropdownLinkBackgroundHover, darken($dropdownLinkBackgroundHover, 5%));
+}
+
+// Active state
+// ------------
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+  color: $dropdownLinkColorActive;
+  text-decoration: none;
+  outline: 0;
+  @include gradient-vertical($dropdownLinkBackgroundActive, darken($dropdownLinkBackgroundActive, 5%));
+}
+
+// Disabled state
+// --------------
+// Gray out text and ensure the hover state remains gray
+.dropdown-menu .disabled > a,
+.dropdown-menu .disabled > a:hover {
+  color: $grayLight;
+}
+// Nuke hover effects
+.dropdown-menu .disabled > a:hover {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none; // Remove CSS gradient
+//  @include reset-filter();
+  cursor: default;
+}
+
+// Open state for the dropdown
+// ---------------------------
+.open > .dropdown-menu {
+	display: block;
+}
+
+// Right aligned dropdowns
+// ---------------------------
+.pull-right > .dropdown-menu {
+	right: 0;
+	left: auto;
+}
+
+.navbar .nav>li>.dropdown-menu.pull-right:after, 
+.navbar .subnav>li>.dropdown-menu.pull-right:after {
+	right: 12px;
+	left: auto;
+}
