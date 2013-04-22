@@ -1,0 +1,17 @@
+// TEMP COLOURS
+$muted-color: #aaa29d; 
+
+
+
+.breadcrumbs {
+	font-size: 14px;
+}
+
+.breadcrumbs__link {
+	color: $muted-color;
+
+	&:hover {
+		color: $brand-color;
+	}
+
+}
