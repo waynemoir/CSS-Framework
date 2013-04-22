@@ -14,10 +14,18 @@
 @import "inuit.css/inuit";
 
 
+// |--------------------------------------------------------------------------
+// | Mixins
+// |--------------------------------------------------------------------------
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
 
 
 // |--------------------------------------------------------------------------
 // | Custom UI
 // |--------------------------------------------------------------------------
 @import "ui/font-awesome";
+@import "ui/nav--tabs";
+@import "ui/island";
+@import "ui/alerts";
 @import "ui/breadcrumbs";
