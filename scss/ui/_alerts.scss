@@ -1,11 +1,12 @@
 .alert {
-	@extend .islet;
 	@extend .island--well;
+	@extend %sass-margin-bottom;
+
+	padding: $half-spacing-unit;
 }
 
 .alert--block {
-	@extend .island;
-	padding:$base-spacing-unit; // @extend .island; but not really // TODO: 'Issue' caused by island and islet original order
+	padding: $base-spacing-unit;
 }
 
 .alert--info {
