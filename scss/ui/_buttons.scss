@@ -19,6 +19,7 @@
  .btn {
 	@include border-radius($brand-round);
 	@include button-gradient($brand-btn-color);
+	border: 1px solid #acacac;
 	border: 1px solid rgba(0, 0, 0, 0.15);
 	color: $black;
 	box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0470588) 0px 1px 2px 0px;
