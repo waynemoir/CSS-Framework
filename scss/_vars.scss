@@ -61,8 +61,6 @@ $use-greybox:       false;
 
 
 
-
-
 /*------------------------------------*\
     $CUSTOM
 \*------------------------------------*/
@@ -89,7 +87,7 @@ $base-ui-color-alt: #eee;
 
 
 /**
- * Alert colours
+ * Alert and button colours
  */
 $brand-info-background-color: #d9edf7;
 $brand-info-color: #3a87ad;
@@ -107,7 +105,20 @@ $brand-danger-color:				#b94a48;
 $brand-danger-background-color:		#f2dede;
 $brand-danger-border-color:			darken(adjust-hue($brand-danger-background-color, -10), 3%);
 
+
 /**
  * Muted colour
  */
-$muted-color: #aaa29d; 
+$muted-color: #aaa29d;
+
+
+/**
+ * Colours
+ */
+$white: #fff;
+$orange: orange;
+$black: black;
+$red: red;
+
+
+$brand-btn-color: #edeceb; // TODO: Define colours
